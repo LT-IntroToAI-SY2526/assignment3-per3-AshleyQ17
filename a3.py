@@ -153,7 +153,7 @@ def title_by_director(matches: List[str]) -> List[str]:
     for movie in movie_db:
         if get_director(movie) == director:
             result.append(get_title(movie))
-     return result
+    return result
 
 
 def actors_by_title(matches: List[str]) -> List[str]:
@@ -206,6 +206,17 @@ def title_by_actor(matches: List[str]) -> List[str]:
             result.append(get_title(movie))
     return result
 
+    print("what movies were made in 1974")
+
+def title_by_actors(matches: List[str]) -> List[str]:
+    "Finds titles of all movies that have that number of actors"
+    actors = matches[0]
+    num = matches[1]
+    result = []
+    for movie in movie_db:
+        if get_actors(movie) == num:
+            result.append(get_title(movie))
+    return result
 
 # dummy argument is ignored and doesn't matter
 def bye_action(dummy: List[str]) -> None:
@@ -227,6 +238,8 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who acted in %"), actors_by_title),
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
+    (str.split("in what year was % made"), year_by_title),
+    (str.split("")),
     (["bye"], bye_action),
 ]
 
@@ -243,8 +256,19 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    pass
+    for pat, act in pa_list:
+        print(f"pattern: {pat}, source: {src}, action: {act}")
+        mat = match (pat, src)
+        print(f"match:{mat}")
+    
+        if mat is not None:
+            ans = act (mat)
+            print(f"answer: {ans}")
+            return ans if ans else ["No answers"]
 
+    return["I don't understand"]
+
+       
 
 def query_loop() -> None:
     """The simple query loop. The try/except structure is to catch Ctrl-C or Ctrl-D
