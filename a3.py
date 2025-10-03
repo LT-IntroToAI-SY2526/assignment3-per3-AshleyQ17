@@ -211,7 +211,7 @@ def title_by_actor(matches: List[str]) -> List[str]:
 def title_by_actors(matches: List[str]) -> List[str]:
     "Finds titles of all movies that have that number of actors"
     actors = matches[0]
-    num = matches[1]
+    num = int (matches[1])
     result = []
     for movie in movie_db:
         if get_actors(movie) == num:
@@ -239,7 +239,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
     (str.split("in what year was % made"), year_by_title),
-    (str.split("")),
+    (str.split("what movie had % actors", title_by_actors)),
     (["bye"], bye_action),
 ]
 

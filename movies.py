@@ -435,5 +435,17 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "spike lee",
         ],
     ),
-    
+    (
+        "Casper"
+        "Brad Silberling"
+        1995,
+        [
+            "Devon Sawa"
+            "Christina Ricci"
+            "Bill Pullman"
+            "Cathy Moriarty"
+            "Malachi Pearson"
+            "Eric Idle"
+        ]
+    )
 ]
