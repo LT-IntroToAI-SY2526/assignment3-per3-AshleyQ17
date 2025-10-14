@@ -13,13 +13,13 @@ Remember: This assignment completes our movie chatbot system - focus on understa
 ## Grading Table
 | Criteria | Points Possible | Points Earned | Comments |
 |----------|----------------|---------------|----------|
-| **Action Functions** | 9 | | |
+| **Action Functions** | 9 | 8 | Title by year range wasn't correct |
 | **Core System Functions** | | | |
-| search_pa_list Implementation | 7 | | |
-| query_loop Function | 1 | | |
+| search_pa_list Implementation | 7 | 7 | |
+| query_loop Function | 1 | 1 | |
 | **Creative Additions** | | | |
-| Database & Pattern Extensions | 3 | | |
-| **TOTAL** | **20** | | |
+| Database & Pattern Extensions | 3 | 2 | Didn't add an action function |
+| **TOTAL** | **20** | 18 | |
 ---
 ## Action Functions (9 points)
 **Basic Movie Queries (5 points)**
